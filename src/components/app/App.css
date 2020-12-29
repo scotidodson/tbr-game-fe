@@ -1,0 +1,28 @@
+.App {
+  max-width: 1000px;
+  margin: 2% auto;
+}
+
+.App header {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin: auto;
+  padding: 2%;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  background-color: #333;
+  letter-spacing: 4px;
+}
+
+.intro {
+  text-align: center;
+  margin: 2%;
+}
+
+.CardContainer {
+  background-color: bisque;
+  margin: 2% auto;
+  max-width: 800px;
+}
