@@ -12,7 +12,8 @@ function Button(props) {
       className="Button" 
       type="button" 
       style={buttonStyle}
-      onClick={props.handleClick}>
+      onClick={props.handleClick}
+      id={props.moveTo}>
       {props.label}
     </button>
   );

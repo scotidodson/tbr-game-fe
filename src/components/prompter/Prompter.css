@@ -9,3 +9,7 @@
     max-width: 600px;
     margin: auto;
 }
+
+#book-quant-form span {
+    font-weight: bold;
+}
