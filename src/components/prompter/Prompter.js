@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../button/Button';
-import {monthObj,monthArr} from '../../utils/data.js';
+import {monthObj,monthArr,tbrDecks} from '../../utils/data.js';
 import './Prompter.css';
 
 
@@ -8,6 +8,7 @@ class Prompter extends React.Component {
   state = {
     phase: 'start',
     month: null,
+    tbrDeck: null,
     bookQuant: 1
   };
 
@@ -20,22 +21,27 @@ class Prompter extends React.Component {
 
     switch (moveTo) {
       case 'start':
-        this.setState({
-          ...this.state,
+        this.setState ((state, props) => ({
           phase: moveTo
-        })
+        }));
+        break;
       case 'month':
-        this.setState({
-          ...this.state,
+        this.setState((state, props) => ({
           phase: moveTo
-        })
+        }));
+        break;
       case 'quantity':
-        this.setState({
-          ...this.state,
+        this.setState((state, props) => ({
           phase: moveTo,
           month: selection
-        })
-  
+        }));
+        break;
+      case 'deal':
+        this.setState((state, props) => ({
+          phase: moveTo,
+          tbrDeck: selection
+        }));
+        break;
       default:
         break;
     }
@@ -43,20 +49,20 @@ class Prompter extends React.Component {
 
   handleChange = (e) => {
     const quant = e.target.value || 1;
-    this.setState({
-      ...this.state,
+    this.setState((state, props) => ({
+      
       bookQuant: quant
-    })
+    }));
   }
 
   handleSubmit = (e) => {
     if (e.preventDefault) e.preventDefault();
     const selection = (((e.target||'').querySelector('#quantSelect'))||'').value || '';
-      this.setState({
-        ...this.state,
+      this.setState((state, props) => ({
+        
         bookQuant: selection,
         phase: 'deck'
-      })
+      }));
   }
 
   getMonthButtons = () => {
@@ -68,11 +74,11 @@ class Prompter extends React.Component {
   }
 
   getDeckButtons = () => {
-    let monthButtons = [];
-    monthArr.forEach( x => {
-      monthButtons.push(<Button key={x} label={x} handleClick={this.handleClick} moveTo="quantity"/>)
+    let deckButtons = [];
+    Object.keys(tbrDecks).forEach( x => {
+      deckButtons.push(<Button key={x} label={x} handleClick={this.handleClick} moveTo="deal"/>)
     })  
-    return monthButtons
+    return deckButtons
   }
 
   calcBooks = (timeframe) => {
@@ -134,7 +140,11 @@ class Prompter extends React.Component {
                     {/* replace with images? */}
                   </div>
                 </div>
-
+      case 'deal':
+        return <div>
+                  <p>Awesome - you selected the {this.state.tbrDeck} deck.</p>
+                  <p>Flip the cards to reveal your {this.state.month} reading list!</p>
+               </div>
       default:
         break;
     }
@@ -145,7 +155,6 @@ class Prompter extends React.Component {
       <div className="Prompter">
           <div>
           {this.getPrompt(this.state.phase)}
-          {/* how many months? */}
           </div>
       </div>
     );
