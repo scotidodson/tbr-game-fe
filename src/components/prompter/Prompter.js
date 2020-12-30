@@ -12,6 +12,16 @@ class Prompter extends React.Component {
     bookQuant: 1
   };
 
+  componentDidUpdate() {
+    console.log('updated Prompter')
+    if (this.state.phase === 'deal') {
+      console.log('updated deal prompter')
+      this.setState({phase: 'dealt'})
+      this.props.renderCards({...this.state})
+      
+    } 
+  }
+
   handleClick = (e) => {
     console.log('button clicked')
     const moveTo = e.target.id || '';
@@ -19,26 +29,26 @@ class Prompter extends React.Component {
 
     switch (moveTo) {
       case 'start':
-        this.setState ((state, props) => ({
+        this.setState({
           phase: moveTo
-        }));
+        });
         break;
       case 'month':
-        this.setState((state, props) => ({
+        this.setState({
           phase: moveTo
-        }));
+        });
         break;
       case 'quantity':
-        this.setState((state, props) => ({
+        this.setState({
           phase: moveTo,
           month: selection
-        }));
+        });
         break;
       case 'deal':
-        this.setState((state, props) => ({
+        this.setState({
           phase: moveTo,
           tbrDeck: selection
-        }));
+        });
         break;
       default:
         break;
@@ -47,20 +57,18 @@ class Prompter extends React.Component {
 
   handleChange = (e) => {
     const quant = e.target.value || 1;
-    this.setState((state, props) => ({
-      
+    this.setState({
       bookQuant: quant
-    }));
+    });
   }
 
   handleSubmit = (e) => {
     if (e.preventDefault) e.preventDefault();
     const selection = (((e.target||'').querySelector('#quantSelect'))||'').value || '';
-      this.setState((state, props) => ({
-        
+      this.setState({
         bookQuant: selection,
         phase: 'deck'
-      }));
+      });
   }
 
   getMonthButtons = () => {
@@ -101,7 +109,7 @@ class Prompter extends React.Component {
   renderDeckDescriptions = () => {
     let deckDescriptions = [];
     for (const deckName in tbrDecks) {
-      deckDescriptions.push(<div>
+      deckDescriptions.push(<div key={deckName}>
                               <h3>{deckName}</h3>
                               <p>{tbrDecks[deckName]["description"]}</p>
                             </div>)
@@ -152,7 +160,7 @@ class Prompter extends React.Component {
                     {this.renderDeckDescriptions()}
                   </div>
                 </div>
-      case 'deal':
+      case 'dealt':
         return <div>
                   <p>Awesome - you selected the {this.state.tbrDeck} deck.</p>
                   <p>Flip the cards to reveal your {this.state.month} reading list!</p>
@@ -167,7 +175,6 @@ class Prompter extends React.Component {
       <div className="Prompter">
           <div>
           {this.getPrompt(this.state.phase)}
-          {this.state.tbrDeck ? this.props.renderCards({...this.state}):null}
           </div>
       </div>
     );
