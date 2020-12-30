@@ -100,6 +100,16 @@ class Prompter extends React.Component {
         break;
     }
   }
+  renderDeckDescriptions = () => {
+    let deckDescriptions = [];
+    for (const deckName in tbrDecks) {
+      deckDescriptions.push(<div>
+                              <h3>{deckName}</h3>
+                              <p>{tbrDecks[deckName]["description"]}</p>
+                            </div>)
+    } 
+    return deckDescriptions
+  }
 
   getPrompt = (phase) => {
     switch (phase) {
@@ -138,6 +148,10 @@ class Prompter extends React.Component {
                   <div className="deck-buttons-container">
                     {this.getDeckButtons()}
                     {/* replace with images? */}
+                  </div>
+                  <p>About the decks....</p>
+                  <div>
+                    {this.renderDeckDescriptions()}
                   </div>
                 </div>
       case 'deal':

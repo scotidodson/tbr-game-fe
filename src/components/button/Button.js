@@ -4,14 +4,15 @@ import './Button.css';
 function Button(props) {
 
   var buttonStyle = {
-    margin: '10px 10px 10px 0',width: '80px'
+    quantity: {margin: '10px 10px 10px 0',width: '80px'},
+    deal: {margin: '10px 10px 10px 0',width: '150px',height: '60px'}
   };
 
   return (
     <button 
       className="Button" 
       type="button" 
-      style={buttonStyle}
+      style={buttonStyle[props.moveTo]}
       onClick={props.handleClick}
       id={props.moveTo}>
       {props.label}
