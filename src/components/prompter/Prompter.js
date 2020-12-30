@@ -12,8 +12,6 @@ class Prompter extends React.Component {
     bookQuant: 1
   };
 
-  
-  
   handleClick = (e) => {
     console.log('button clicked')
     const moveTo = e.target.id || '';
@@ -150,7 +148,7 @@ class Prompter extends React.Component {
                     {/* replace with images? */}
                   </div>
                   <p>About the decks....</p>
-                  <div>
+                  <div className="deck-info-container">
                     {this.renderDeckDescriptions()}
                   </div>
                 </div>
@@ -169,6 +167,7 @@ class Prompter extends React.Component {
       <div className="Prompter">
           <div>
           {this.getPrompt(this.state.phase)}
+          {this.state.tbrDeck ? this.props.renderCards({...this.state}):null}
           </div>
       </div>
     );

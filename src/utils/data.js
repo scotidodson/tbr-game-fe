@@ -17,7 +17,7 @@ export const monthArr = Object.keys(monthObj);
 
 export const tbrDecks = {
     "Book Riot's Read Harder Challenge": {
-        "description": 'This deck uses Book Riot\'s 2021 Read Harder Challenge prompts. https://bookriot.com/read-harder-2021/',
+        "description": 'This deck uses Book Riot\'s 2021 Read Harder Challenge prompts. Find the original challenge here: https://bookriot.com/read-harder-2021/',
         "prompts": [
             'A book you’ve been intimidated to read',
             'A nonfiction book about anti-racism',
@@ -149,7 +149,7 @@ export const tbrDecks = {
         ]
     },
     "Read the World": {
-        "description": 'This deck prompts you to choose books based on setting. For example: "A book set in Europe", "A book set in Vietnam", "A book set in a country you want to visit", etc.',
+        "description": 'This deck prompts you to choose books based on setting. For example: "A book set in the mountains", "A book set in Vietnam", "A book set in a country you want to visit", etc.',
         "prompts": [
             'A book set in Europe',
             'A book set in Asia',
@@ -524,7 +524,7 @@ export const tbrDecks = {
             'An author you have never read before',
             'A book that is known for inspiring other writers',
             'An essay collection',
-            'A book by an author better known for something other than writing books'
+            'A book by an author better known for something other than writing books',
             'A book under 300 pages',
             'A book over 400 pages',
             'A book with a one word title',
@@ -536,7 +536,8 @@ export const tbrDecks = {
             'A presidential biography',
             'A book about a foreign country',
             'A book about a musician, fiction or non-fiction',
-            'A book celebrated as feminist, fiction or non-fiction'
+            'A book celebrated as feminist, fiction or non-fiction',
+            'An audiobook narrated by the author'
         ]
     },
     "Prompt mixer!": {

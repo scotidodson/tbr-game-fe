@@ -3,7 +3,8 @@
 }
 
 .month-buttons-container,
-.deck-buttons-container {
+.deck-buttons-container,
+.deck-info-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -13,4 +14,13 @@
 
 #book-quant-form span {
     font-weight: bold;
+}
+
+.deck-info-container p {
+    font-size: 12px;
+    margin: 0 auto;
+}
+
+.deck-info-container h3 {
+    margin: 20px 0 4px;
 }
