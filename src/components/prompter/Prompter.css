@@ -12,7 +12,8 @@
     margin: auto;
 }
 
-#book-quant-form span {
+#book-quant-form span,
+.Prompter span {
     font-weight: bold;
 }
 

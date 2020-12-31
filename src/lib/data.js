@@ -17,6 +17,9 @@ export const monthArr = Object.keys(monthObj);
 
 export const tbrDecks = {
     "Book Riot's Read Harder Challenge": {
+        "name": 'Book Riot\'s Read Harder Challenge',
+        "canMix": true,
+        "randomSelect": true,
         "description": 'This deck uses Book Riot\'s 2021 Read Harder Challenge prompts. Find the original challenge here: https://bookriot.com/read-harder-2021/',
         "prompts": [
             'A book you’ve been intimidated to read',
@@ -46,6 +49,9 @@ export const tbrDecks = {
         ]
     },
     "PopSugar Reading Challenge": {
+        "name": 'PopSugar Reading Challenge',
+        "canMix": true,
+        "randomSelect": true,
         "description": 'This deck uses PopSugar\'s 2021 Reading Challenge prompts. Available here: https://www.popsugar.com/entertainment/reading-challenge-2021-47892177',
         "prompts": [
             'A book that\'s published in 2021',
@@ -100,6 +106,9 @@ export const tbrDecks = {
         ]
     },
     "Back to the Classics": {
+        "name": 'Back to the Classics',
+        "canMix": true,
+        "randomSelect": true,
         "description": 'A deck focused on reading the classics! We define this as any book written at least 50 years ago, but you can define it otherwise if you\'d like.',
         "prompts": [
             'A 19th century classic: any book first published from 1800 to 1899',
@@ -117,6 +126,9 @@ export const tbrDecks = {
         ]
     },
     "Reading Women Challenge": {
+        "name": 'Reading Women Challenge',
+        "canMix": true,
+        "randomSelect": true,
         "description": 'A deck focused on reading women and nonbinary authors comfortable being included in feminine-coded intitiatives.',
         "prompts": [
             'A Book Longlisted for the JCB Prize',
@@ -149,6 +161,9 @@ export const tbrDecks = {
         ]
     },
     "Read the World": {
+        "name": 'Read the World',
+        "canMix": true,
+        "randomSelect": true,
         "description": 'This deck prompts you to choose books based on setting. For example: "A book set in the mountains", "A book set in Vietnam", "A book set in a country you want to visit", etc.',
         "prompts": [
             'A book set in Europe',
@@ -202,6 +217,9 @@ export const tbrDecks = {
         ]
     },
     "The ZORA Canon": {
+        "name": 'The ZORA Canon',
+        "canMix": false,
+        "randomSelect": true,
         "description": 'This deck includes the titles curated for the ZORA Canon. These were chosen by the ZORA Editors as the 100 greatest books ever written by African American women. More info at: https://zora.medium.com/',
         "prompts": [
             'Our Nig by Harriet E. Wilson',
@@ -307,6 +325,9 @@ export const tbrDecks = {
         ]
     },
     "Booker Prize Winners": {
+        "name": 'Booker Prize Winners',
+        "canMix": false,
+        "randomSelect": true,
         "description": 'This deck includes all titles awarded the Booker Prize.',
         "prompts": [
             'Something to Answer For by P. H. Newby',
@@ -368,6 +389,9 @@ export const tbrDecks = {
         ]
     },
     "Pulitzer Prize Winners for Fiction": {
+        "name": 'Pulitzer Prize Winners for Fiction',
+        "canMix": false,
+        "randomSelect": true,
         "description": 'This deck includes all titles awarded the Pulitzer Prize in Fiction.',
         "prompts": [
             '1918: His Family by Ernest Poole',
@@ -467,6 +491,9 @@ export const tbrDecks = {
         ]
     },
     "Genre Roulette": {
+        "name": 'Genre Roulette',
+        "canMix": true,
+        "randomSelect": true,
         "description": 'This deck prompts you to read books based on genre or type. For example: "A fantasy novel", "The first book in a series","A non-fiction book", etc',
         "prompts": [
             'A book from your favorite genre',
@@ -541,12 +568,18 @@ export const tbrDecks = {
         ]
     },
     "Prompt mixer!": {
+        "name": 'Prompt mixer!',
+        "canMix": false,
+        "randomSelect": false,
         "description": 'This option will mix all prompts together. Does not include the ZORA Canon titles or Booker and Pulitzer prize winners.',
         "prompts": [
 
         ]
     },
     "Surprise me!": {
+        "name": 'Surprise me!',
+        "canMix": false,
+        "randomSelect": false,
         "description": 'This option will randomly choose one of the decks for you.',
         "prompts": [
 

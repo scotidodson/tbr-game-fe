@@ -10,7 +10,7 @@ class App extends React.Component {
     cardSelections: null
   };
 
-  renderCards = (selection) => {
+  dealCards = (selection) => {
     this.setState({
       dealCards: true,
       cardSelections: selection
@@ -21,7 +21,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>TBR Planner</header>
-        <Prompter renderCards={this.renderCards}/>
+        <Prompter dealCards={this.dealCards}/>
         {this.state.dealCards ? <CardContainer cardSelections={this.state.cardSelections} />:null}
       </div>
     );

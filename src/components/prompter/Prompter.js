@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../button/Button';
-import {monthObj,monthArr,tbrDecks} from '../../utils/data.js';
+import {monthObj,monthArr,tbrDecks} from '../../lib/data.js';
 import './Prompter.css';
 
 
@@ -17,7 +17,7 @@ class Prompter extends React.Component {
     if (this.state.phase === 'deal') {
       console.log('updated deal prompter')
       this.setState({phase: 'dealt'})
-      this.props.renderCards({...this.state})
+      this.props.dealCards({...this.state})
       
     } 
   }
@@ -162,7 +162,7 @@ class Prompter extends React.Component {
                 </div>
       case 'dealt':
         return <div>
-                  <p>Awesome - you selected the {this.state.tbrDeck} deck.</p>
+                  <p>Awesome - you selected the <span>{this.state.tbrDeck}</span> deck.</p>
                   <p>Flip the cards to reveal your {this.state.month} reading list!</p>
                </div>
       default:
