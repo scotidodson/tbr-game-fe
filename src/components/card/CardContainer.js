@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  tbrDecks
-} from '../../lib/data.js';
+import {tbrDecks} from '../../lib/data.js';
 import Card from './Card';
 import './Card.css';
 
@@ -11,6 +9,21 @@ class CardContainer extends React.Component {
   }
 
   renderCards = (props) => {
+    const cardsToRender = this.selectCards(props) || [];
+    let cardComponents = [];
+    let i = 0;
+    
+    // for (const cardObj in cardsToRender) {
+    //   return <Card key={i++} cardName={cardObj.deck} cardPrompt={cardObj.prompt} />
+    // }
+
+    cardsToRender.forEach(cardObj =>{
+      cardComponents.push(<Card key={i++} cardName={cardObj.deck} cardPrompt={cardObj.prompt} />)
+    })
+    return cardComponents
+  }
+
+  selectCards = (props) => {
     let starterDeck = [];
     let selectedCards = [];
     const bookQuant = Number(props.cardSelections.bookQuant);
@@ -77,10 +90,10 @@ class CardContainer extends React.Component {
         // randomize & select correct number from starterDeck; starterDeck must be array
         selectedCards = this.randomizeCards(starterDeck);
         selectedCards = this.cutDeck(selectedCards,bookQuant);
-
         console.log('chosen deck: ', chosenDeck, 'cards: ', selectedCards)
         break;
     }
+    return selectedCards
   }
 
   randomizeCards = (starterDeck) => {
@@ -103,11 +116,10 @@ class CardContainer extends React.Component {
   }
 
   render() {
-    return ( <
-      div className = "CardContainer" > {
-        this.renderCards(this.props)
-      } <
-      /div>
+    return ( 
+      <div className = "CardContainer" > 
+        {this.renderCards(this.props)} 
+      </div>
     );
   }
 }

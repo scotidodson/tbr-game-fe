@@ -1,10 +1,10 @@
-// import '../card/CardContainer.js';
 import './Card.css';
 
-function Card() {
+function Card(props) {
   return (
     <div className="Card">
-
+      <p>{props.cardName}</p>
+      <p>{props.cardPrompt}</p>
     </div>
   );
 }
