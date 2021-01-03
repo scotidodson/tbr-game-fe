@@ -11,14 +11,14 @@ class CardContainer extends React.Component {
   renderCards = (props) => {
     const cardsToRender = this.selectCards(props) || [];
     let cardComponents = [];
-    let i = 0;
+    let i = 1;
     
     // for (const cardObj in cardsToRender) {
     //   return <Card key={i++} cardName={cardObj.deck} cardPrompt={cardObj.prompt} />
     // }
 
     cardsToRender.forEach(cardObj =>{
-      cardComponents.push(<Card key={i++} cardName={cardObj.deck} cardPrompt={cardObj.prompt} />)
+      cardComponents.push(<Card key={i++} cardName={cardObj.deck} cardNum ={i} cardPrompt={cardObj.prompt} />)
     })
     return cardComponents
   }

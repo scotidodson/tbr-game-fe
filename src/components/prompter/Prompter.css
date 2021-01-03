@@ -2,19 +2,20 @@
     text-align: center;
 }
 
-.month-buttons-container,
-.deck-buttons-container,
-.deck-info-container {
+
+.Prompter div {
+    max-width: 700px;
+    margin: 50px auto auto;
+}
+
+div.month-buttons-container,
+div.deck-buttons-container,
+div.deck-info-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     max-width: 600px;
     margin: auto;
-}
-
-#book-quant-form span,
-.Prompter span {
-    font-weight: bold;
 }
 
 .deck-info-container p {

@@ -16,13 +16,15 @@
   letter-spacing: 4px;
 }
 
+.App p {
+  margin: 8px 2px;
+}
+
 .intro {
   text-align: center;
   margin: 2%;
 }
 
-.CardContainer {
-  background-color: bisque;
-  margin: 2% auto;
-  max-width: 800px;
+.bold {
+  font-weight: bold;
 }

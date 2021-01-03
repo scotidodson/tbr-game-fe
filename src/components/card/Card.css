@@ -1,0 +1,59 @@
+.CardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2% auto;
+    max-width: 800px;
+}
+
+.Card {
+    width: 140px;
+    height: 200px;
+    margin: 10px;
+    text-align: center;
+    float: left;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.promptCard {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform .5s;
+    transform-style: preserve-3d;
+}
+
+.card__face {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.card__face--front {
+    vertical-align: middle;
+    background: lightblue;
+    border: navy solid 2px;
+    color: navy;
+    font-size: 22px;
+}
+
+.card__face--back {
+    background: purple;
+    border: lightsteelblue solid 2px;
+    color: white;
+    transform: rotateY(180deg);
+    font-size: 12px;
+}
+
+.card__face--back p:first-of-type {
+    text-transform: uppercase;
+}
+
+.promptCard.is-flipped {
+    transform: rotateY(180deg);
+}

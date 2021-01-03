@@ -121,12 +121,56 @@ class Prompter extends React.Component {
     switch (phase) {
       case 'start':
         return <div>
-                <p>explanation here</p>
-                <Button label="Let's plan!" handleClick={this.handleClick} moveTo="month"/>
+                <p>TBR Planner helps you plan your "<span className="bold">T</span>o <span className="bold">B</span>e <span className="bold">R</span>ead" list.</p>
+                <br/>
+                <p>You can upload your own list of books to play with or choose a TBR deck.</p>
+                <p>You choose the number of books and we'll generate your list.</p>
+                <br/>
+                <p>A TBR game can help shake up your reading and get you out of your comfort zone.</p>
+                <p>...it can also help you break through indecision if you just have too many good books to choose where to start.</p>
+                <br/>
+                <p>Some of the TBR decks (such as Pulitzer Prize Winners) include actual titles.</p>
+                <p>Others (like Genre Roulette) will give you prompts instead and you will choose a title for it. </p>
+                <br/>
+                <p>It's all for fun - happy reading!</p>
+                <br/>
+
+                <p>I want to read 
+                  <span>
+                    <input id="quantSelect" type="number" step="1" min="1" max="100" value={this.state.bookQuant} onChange={this.handleChange} required /> 
+                  </span>
+                  book{this.calcBooks('day')>1?'s':null} in  
+                  <span>  
+                    <select id="month" name="month">
+                      <option selected>January</option>
+                      <option>February</option>
+                      <option>March</option>
+                      <option>April</option>
+                      <option>May</option>
+                      <option>June</option>
+                      <option>July</option>
+                      <option>August</option>
+                      <option>September</option>
+                      <option>October</option>
+                      <option>November</option>
+                      <option>December</option>
+                    </select>
+                  </span>
+                </p>
+                <p>and I want to <span>  
+                    <select id="method" name="method">
+                      <option selected>use a TBR Planner deck</option>
+                      <option>use my own list of books</option>
+                    </select>
+                  </span>
+                </p>
+                <Button label="Start" handleClick={this.handleClick} moveTo="month"/>
               </div>
 
       case 'month':
         return <div>
+
+                  
                   <p>Choose a month to plan...</p>
                   <div className="month-buttons-container">
                     {this.getMonthButtons()}
